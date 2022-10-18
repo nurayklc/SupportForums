@@ -7,7 +7,14 @@
         @foreach (var forum in Model.ForumList)
         {
             <tr>
-                <td><a asp-controller="Forum" asp-action="Topic" asp-route-id="@forum.Id">@forum.Name</a>
+
+                <td>
+                    <div class="forumLogo" style="background-image:url(@forum.ImageUrl); background-size:100%;">
+                        
+                    </div>
+                </td>
+                <td>
+                    <a asp-controller="Forum" asp-action="Topic" asp-route-id="@forum.Id">@forum.Name</a>
                 </td>
                 <td>@forum.Description</td>
             </tr>

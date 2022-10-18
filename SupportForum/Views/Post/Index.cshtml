@@ -1,28 +1,93 @@
 ﻿@model PostIndexViewModel
-
-<h1>@Model.Title</h1>
-
 <div>
-    Author @Model.AuthorName (@Model.AuthorRating)
-    Author @Model.Created
+    <span>
+        <a asp-controller="Forum" asp-action="Topic" asp-route-id="@Model.ForumId" class="btn btn-primary">
+            Back to @Model.ForumName
+        </a>
+    </span>
 </div>
 
-<div>
-    @Model.PostContent
+<div class="row bg-light">
+    <div class="col-md-3 mt-3">
+        <div style="background-image:url(@Model.AuthorImageUrl);background-size:100%; width:200px;  height:200px; background-repeat:no-repeat"></div>
+        <a asp-controller="Profile" asp-action="Detail" asp-route-id="@Model.AuthorId">
+            @Model.AuthorName
+        </a>
+        <span>@Model.Created</span>
+        @if (User.IsInRole("Admin"))
+        {
+            <span>Admin</span>
+        }
+    </div>
+    <div class="col-md-9 mt-3">
+        <span>
+            @Model.PostContent
+        </span>
+    </div>
 </div>
+<div class="row"></div>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <div class="row">
+        <span>
+            <a asp-controller="Reply" asp-action="Create" asp-route-id="@Model.Id"
+               class="btn btn-newReply">
+                Post Reply
+            </a>
+        </span>
+    </div>
+}
 
 @if (Model.Replies.Any())
 {
     foreach (var reply in Model.Replies)
     {
-        <div>
-            <div>
-                Reply Author: @reply.AuthorName
-                Reply Created: @reply.Created
-            </div>
-            <div>
-                Reply: @reply.ReplyContent
+        <div class="row">
+            <div class="col-md-3">
+                <div style="background-image: url( @reply.AuthorImageUrl ); background-size: 100%; width: 400px; height: 400px; padding: 15px; background-repeat: no-repeat"></div>
+                <a asp-controller="Profile" asp-action="Detail" asp-route-id="@reply.AuthorId">
+                    @reply.AuthorName
+                </a>
+                @if (User.IsInRole("Admin"))
+                {
+                    <div>Admin</div>
+                    <br />
+                }
+                <span>@reply.Created</span>
             </div>
         </div>
     }
 }
+else
+{
+    <div class="row">
+        <h3>There are no replies to this project. <br /></h3>
+    </div>
+    <h1>@Model.Title</h1>
+    <div>
+        Author @Model.AuthorName (@Model.AuthorRating)
+        Author @Model.Created
+    </div>
+
+    <div>
+        @Model.PostContent
+    </div>
+
+    @if (Model.Replies.Any())
+    {
+        foreach (var reply in Model.Replies)
+        {
+            <div>
+                <div>
+                    Reply Author: @reply.AuthorName
+                    Reply Created: @reply.Created
+                </div>
+                <div>
+                    Reply: @reply.ReplyContent
+                </div>
+            </div>
+        }
+    }
+}
+

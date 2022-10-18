@@ -31,6 +31,8 @@ namespace SupportForum.Controllers
             var model = new PostIndexViewModel
             {
                 Id = post.Id,
+                ForumId = post.Forum.Id,
+                ForumName = post.Forum.Title,
                 Title = post.Title,
                 AuthorId = post.User.Id,
                 AuthorName = post.User.UserName,
@@ -55,14 +57,12 @@ namespace SupportForum.Controllers
             };
             return View(model);
         }
-
         [HttpPost]
         public async Task<IActionResult> AddPost(NewPostViewModel model)
         {
             var userId = _userManager.GetUserId(User);
             var user = _userManager.FindByIdAsync(userId).Result;
             var post = BuildPost(model, user);
-
             _postService.Add(post).Wait(); 
 
             // TODO: Implement user rating management
