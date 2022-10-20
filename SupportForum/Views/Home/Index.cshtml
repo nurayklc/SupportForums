@@ -4,13 +4,13 @@
 }
 
 <div class="container ">
-    <div class="row">
+    <div class="row bg-light">
         <div class="col-md-6">
             <div class="">Learn, Collaborate, Share Knowledge</div>
             <p>Support Forums is the world's fastest growing coding forum</p>
             <div>
-                <form asp-action="Search" asp-controller="Search" method="post">
-                    <input asp-for="SearchQuery" type="text" name="Search" placeholder="Search..." />
+                <form asp-action="Search" asp-controller="Search" method="post" >
+                    <input asp-for="SearchQuery" type="text" name="Search" placeholder="Search..." class="form-control"/>
                 </form>
             </div>
         </div>
