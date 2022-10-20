@@ -59,6 +59,11 @@ namespace SupportForum.Service
                 : forum.Posts.Where(post => post.Title.ToLower().Contains(searchQuery) || post.Content.Contains(searchQuery)).ToList();
         }
 
+        public IEnumerable<Post> GetFilteredPosts(string searchQuery)
+        {
+            return GetAll().Where(post => post.Title.ToLower().Contains(searchQuery) || post.Content.Contains(searchQuery)).ToList());
+        }
+
         public IEnumerable<Post> GetLatestPosts(int n)
         {
             return GetAll().OrderByDescending(post => post.Created).Take(n);
