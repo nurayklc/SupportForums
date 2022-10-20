@@ -2,10 +2,10 @@
 
 <div class="container">
     <div class="row">
-        <div>
-            <span>
+        <div class="col-md-12">
+            <h6>
                 @Model.Forum.Name Forum
-            </span>
+            </h6>
             @if (User.Identity.IsAuthenticated)
             {
                 <span>
@@ -13,24 +13,36 @@
                 </span>
             }
             <form asp-action="Search" asp-controller="Forum" method="post">
-                <div>
-                    <input asp-for="SearchQuery" type="text" name="Search" placeholder="Search..." class="form-control" onfocus="clearThis(this)" />
+                    <input asp-for="SearchQuery" type="text" name="searchQuery" placeholder="Search..." id="search" class="form-control" onfocus="clearThis(this)"/>
                     <button type="submit" class="btn btn-light"><i class="fa fa-search">search</i></button>
-                </div>
                 <input asp-for="Forum.Id" name="id" type="hidden" />
             </form>
         </div>
-        <div>
-            <div style="background-image:url(@Model.Forum.ImageUrl); background-size:100%; width:100px; height:100px;"></div>
-            <p>Welcome to the @Model.Forum.Name forum. Please keep posts friendly and on-topic. </p>
-            @if (!User.Identity.IsAuthenticated)
+        <div class=" d-flex justify-content-between">
+            <div style="background-image:url(@Model.Forum.ImageUrl); background-size:100%; width:100px; height:100px; background-repeat:no-repeat;"></div>
+            <div>
+                <p>Welcome to the @Model.Forum.Name forum. Please keep posts friendly and on-topic. </p>
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    <p>
+                        <span>
+                            You must be a
+                            <a asp-area="Identity" asp-page="/Account/Register">registered member</a>
+                            to create a new post.
+                        </span>
+                    </p>
+                }
+            </div>
+            @*else
             {
-                <p>
-                    <span>You must be a 
-                        <a asp-area="Identity" asp-page="/Account/Register">registered member</a>
-                     to create a new post.</span>
-                </p>
-            }
+                <div class=" d-flex justify-content-end">
+                    <span class="headingBtn">
+                        <a asp-controller="Post" asp-action="Create" asp-route-id="@Model.Forum.Id" class="btn btn-primary">
+                            Create Post @Model.Forum.Name Forum
+                        </a>
+                    </span>
+                </div>
+            }*@
         </div>
     </div>
     <div class="row">
@@ -43,17 +55,18 @@
                         <tr>
                             <td>
                                 <div class="row">
-                                    <div class="">
-                                        <a asp-controller="Post" asp-action="Index" asp-route-id="@post.Id">@post.Title</a>
+                                    <div class="ml-3">
+                                        <a asp-controller="Post" asp-action="Index" asp-route-id="@post.Id">@post.Title </a>
                                     </div>
-                                    <div>
-                                        <div>
-                                            <span>
-                                                <a asp-controller="Profile" asp-action="Detail" asp-route-id="@post.AuthorId">
-                                                @post.AuthorName</a>
-                                            </span>
-                                            (@post.AuthorRating) 
-                                        </div>
+                                    <div class="ml-3">
+                                        <span>
+                                            <a asp-controller="Profile" asp-action="Detail" asp-route-id="@post.AuthorId">
+                                                @post.AuthorName
+                                            </a>
+                                        </span>
+                                        <span>
+                                            (@post.AuthorRating)
+                                        </span>
                                     </div>
                                 </div>
                             </td>
@@ -79,17 +92,7 @@
     </div>
 </div>
 
-<h1>Welcome to the @Model.Forum.Name Forum</h1>
-
-<div class=" d-flex justify-content-end">
-    <span class="headingBtn">
-        <a asp-controller="Post" asp-action="Create" asp-route-id="@Model.Forum.Id" class="btn btn-primary">
-            Create Post @Model.Forum.Name Forum
-        </a>
-    </span>
-</div>
-
-@section Scripts{ 
+@section Scripts{
     <script>
         function clearThis(target) {
             target.value = "";
