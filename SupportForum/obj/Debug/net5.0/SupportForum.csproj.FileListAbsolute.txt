@@ -454,3 +454,4 @@ E:\projeler\SupportForums\SupportForum\bin\Debug\net5.0\refs\WindowsBase.dll
 E:\projeler\SupportForums\SupportForum\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
 E:\projeler\SupportForums\SupportForum\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
 E:\projeler\SupportForums\SupportForum\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+E:\projeler\SupportForums\SupportForum\obj\Debug\net5.0\Razor\Views\Search\Results.cshtml.g.cs

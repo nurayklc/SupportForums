@@ -61,7 +61,9 @@ namespace SupportForum.Service
 
         public IEnumerable<Post> GetFilteredPosts(string searchQuery)
         {
-            return GetAll().Where(post => post.Title.ToLower().Contains(searchQuery) || post.Content.Contains(searchQuery)).ToList());
+            if (!string.IsNullOrEmpty(searchQuery))
+                searchQuery = searchQuery.ToLower();
+            return GetAll().Where(post => post.Title.ToLower().Contains(searchQuery) || post.Content.Contains(searchQuery)).ToList();
         }
 
         public IEnumerable<Post> GetLatestPosts(int n)

@@ -6,7 +6,7 @@
             <h6>
                Search Results for: @Model.SearchQuery
             </h6>
-            <form asp-action="Search" asp-controller="Forum" method="post">
+            <form asp-action="Search" asp-controller="Search" method="post">
                 <input asp-for="SearchQuery" type="text" name="searchQuery" placeholder="Search..." id="search" class="form-control" onfocus="clearThis(this)" />
                 <button type="submit" class="btn btn-light"><i class="fa fa-search">search</i></button>
             </form>
@@ -21,7 +21,7 @@
                     {
                         <tr>
                             <td>
-                                <div style="background-image:url(@post.Forum.ImageUrl); background-size:100%; width:100px; height:100px;"></div>
+                                <div style="background-image:url(@post.Forum.ImageUrl); background-size:100%; width:100px; height:100px; background-repeat:no-repeat"></div>
                                 <div class="row">
                                     <div class="ml-3">
                                         <a asp-controller="Post" asp-action="Index" asp-route-id="@post.Id">@post.Title </a>
