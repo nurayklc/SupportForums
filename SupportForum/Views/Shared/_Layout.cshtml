@@ -22,14 +22,14 @@
                         @if (SignInManager.IsSignedIn(User))
                         {
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <a href="#" class="dropdown-toggle nav-link text-dark" data-toggle="dropdown" role="button" aria-expanded="false">
                                     Settings
                                     <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu">
+                                    <li class="dropdown-header nav-link text-dark"> Profile</li>
                                     <li role="separator" class="dropdown-divider"></li>
-                                    <li class="dropdown-header"> Profile</li>
-                                    <li><a asp-controller="Profile" asp-action="Detail">My Profile</a></li>
+                                    <li><a asp-controller="Profile" asp-action="Detail" class="nav-link text-dark small">My Profile</a></li>
                                     @if (User.IsInRole("Admin"))
                                     {
                                         <li role="separator" class="dropdown-divider"></li>

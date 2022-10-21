@@ -38,6 +38,8 @@ namespace SupportForum
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddScoped<IForum, ForumService>();
             services.AddScoped<IPost, PostService>();
+            services.AddScoped<IApplicationUser, ApplicationUserService>();
+            services.AddScoped<IUpload, UploadService>();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
         }
 
