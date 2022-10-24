@@ -29,7 +29,7 @@ namespace SupportForum.Data
                 Email = "admin@example.com",
                 NormalizedEmail = "admin@example.com",
                 EmailConfirmed = false,
-                LockoutEnabled = false,
+                LockoutEnabled = true,
                 SecurityStamp = Guid.NewGuid().ToString()
             };
 
@@ -43,13 +43,13 @@ namespace SupportForum.Data
                 {
                     Name = "Admin",
                     NormalizedName = "admin"
-                });
+                }).Wait();
             }
             var hasSuperUser = _context.Users.Any(u => u.NormalizedUserName == user.UserName);
             if (!hasSuperUser)
             {
-                userStore.CreateAsync(user);
-                userStore.AddToRoleAsync(user, "Admin");
+                userStore.CreateAsync(user).Wait();
+                userStore.AddToRoleAsync(user, "Admin").Wait();
             }
 
             _context.SaveChangesAsync();

@@ -29,13 +29,12 @@
                                 <ul class="dropdown-menu">
                                     <li class="dropdown-header nav-link text-dark"> Profile</li>
                                     <li role="separator" class="dropdown-divider"></li>
-                                    <li><a asp-controller="Profile" asp-action="Detail" class="nav-link text-dark small">My Profile</a></li>
+                                    <li><a asp-controller="Profile" asp-action="Detail" asp-route-id="@UserManager.GetUserId(User)" class="nav-link text-dark small">My Profile</a></li>
                                     @if (User.IsInRole("Admin"))
                                     {
-                                        <li role="separator" class="dropdown-divider"></li>
-                                        <li class="dropdown-header">Admin</li>
-                                        <li><a asp-controller="Forum" asp-action="Create">Create Forums</a></li>
-                                        <li><a asp-controller="Profile" asp-action="Index">Views Users</a></li>
+                                        <li class="dropdown-header nav-link text-dark">Admin</li>
+                                        <li><a asp-controller="Forum" asp-action="Create" class="nav-link text-dark small">Create Forums</a></li>
+                                        <li><a asp-controller="Profile" asp-action="Index" class="nav-link text-dark small">Views Users</a></li>
                                     }
                                 </ul>
                             </li>

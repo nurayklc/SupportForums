@@ -35,12 +35,13 @@ namespace SupportForum
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddScoped<IForum, ForumService>();
             services.AddScoped<IPost, PostService>();
             services.AddScoped<IApplicationUser, ApplicationUserService>();
             services.AddScoped<IUpload, UploadService>();
-            services.AddScoped<DataSeeder>();
+            services.AddTransient<DataSeeder>();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
         }
 
