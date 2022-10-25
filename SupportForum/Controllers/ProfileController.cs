@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SupportForum.Data;
 using SupportForum.Data.Models;
@@ -38,6 +39,14 @@ namespace SupportForum.Controllers
                 IsAdmin = userRoles.Contains("Admin")
             };
             return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UploadProfileImage(IFormFile file)
+        {
+            var userId = _userManager.GetUserId(User);
+            // update and create Profile photo with azure 
+            return View();
         }
     }
 }
