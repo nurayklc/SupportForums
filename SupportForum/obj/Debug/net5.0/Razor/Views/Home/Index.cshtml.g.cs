@@ -49,34 +49,41 @@ using SupportForum.Models.Post;
 #nullable disable
 #nullable restore
 #line 7 "E:\projeler\SupportForums\SupportForum\Views\_ViewImports.cshtml"
-using SupportForum.Models.Home;
+using SupportForum.Models.Reply;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 8 "E:\projeler\SupportForums\SupportForum\Views\_ViewImports.cshtml"
-using SupportForum.Models.Search;
+using SupportForum.Models.Home;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 9 "E:\projeler\SupportForums\SupportForum\Views\_ViewImports.cshtml"
-using SupportForum.Models.ApplicationUser;
+using SupportForum.Models.Search;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 10 "E:\projeler\SupportForums\SupportForum\Views\_ViewImports.cshtml"
+using SupportForum.Models.ApplicationUser;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 11 "E:\projeler\SupportForums\SupportForum\Views\_ViewImports.cshtml"
 using Microsoft.AspNetCore.Identity;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"28808f2ca1af24d766ebdfc8fccf68c4a70e115a", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"af618205ad8e6d6c1cf93377b2e286045285fd1c", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7f1a8f3916d4e4c4ab964d6bf11edb54351daa2c", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<HomeIndexModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("type", "text", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -129,9 +136,9 @@ using Microsoft.AspNetCore.Identity;
             BeginWriteAttribute("class", " class=\"", 176, "\"", 184, 0);
             EndWriteAttribute();
             WriteLiteral(">Learn, Collaborate, Share Knowledge</div>\r\n            <p>Support Forums is the world\'s fastest growing coding forum</p>\r\n            <div>\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "28808f2ca1af24d766ebdfc8fccf68c4a70e115a8725", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "28808f2ca1af24d766ebdfc8fccf68c4a70e115a8905", async() => {
                 WriteLiteral("\r\n                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "28808f2ca1af24d766ebdfc8fccf68c4a70e115a9003", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "28808f2ca1af24d766ebdfc8fccf68c4a70e115a9183", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -203,7 +210,7 @@ WriteAttributeValue("", 978, post.Forum.ImageUrl, 978, 20, false);
             WriteAttributeValue(" ", 1049, "background-repeat:no-repeat", 1050, 28, true);
             EndWriteAttribute();
             WriteLiteral(">\r\n                            </div>\r\n                        </td>\r\n                        <td class=\"col-sm-10\">\r\n                            <div class=\"postTitle\">\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "28808f2ca1af24d766ebdfc8fccf68c4a70e115a14304", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "28808f2ca1af24d766ebdfc8fccf68c4a70e115a14484", async() => {
                 WriteLiteral("\r\n                                    ");
 #nullable restore
 #line 33 "E:\projeler\SupportForums\SupportForum\Views\Home\Index.cshtml"
@@ -303,7 +310,7 @@ WriteAttributeValue("", 978, post.Forum.ImageUrl, 978, 20, false);
 #line hidden
 #nullable disable
             WriteLiteral("                                <span>\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "28808f2ca1af24d766ebdfc8fccf68c4a70e115a19012", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "28808f2ca1af24d766ebdfc8fccf68c4a70e115a19192", async() => {
                 WriteLiteral("\r\n                                        ");
 #nullable restore
 #line 51 "E:\projeler\SupportForums\SupportForum\Views\Home\Index.cshtml"

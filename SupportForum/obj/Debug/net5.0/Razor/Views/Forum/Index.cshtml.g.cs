@@ -49,34 +49,41 @@ using SupportForum.Models.Post;
 #nullable disable
 #nullable restore
 #line 7 "E:\projeler\SupportForums\SupportForum\Views\_ViewImports.cshtml"
-using SupportForum.Models.Home;
+using SupportForum.Models.Reply;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 8 "E:\projeler\SupportForums\SupportForum\Views\_ViewImports.cshtml"
-using SupportForum.Models.Search;
+using SupportForum.Models.Home;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 9 "E:\projeler\SupportForums\SupportForum\Views\_ViewImports.cshtml"
-using SupportForum.Models.ApplicationUser;
+using SupportForum.Models.Search;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 10 "E:\projeler\SupportForums\SupportForum\Views\_ViewImports.cshtml"
+using SupportForum.Models.ApplicationUser;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 11 "E:\projeler\SupportForums\SupportForum\Views\_ViewImports.cshtml"
 using Microsoft.AspNetCore.Identity;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"561c69ba1d09589763334456c4115f70a3f89d38", @"/Views/Forum/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"af618205ad8e6d6c1cf93377b2e286045285fd1c", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7f1a8f3916d4e4c4ab964d6bf11edb54351daa2c", @"/Views/_ViewImports.cshtml")]
     public class Views_Forum_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ForumIndexViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Forum", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -128,7 +135,7 @@ WriteAttributeValue("", 291, forum.ImageUrl, 291, 15, false);
             WriteAttributeValue(" ", 308, "background-size:100%;", 309, 22, true);
             EndWriteAttribute();
             WriteLiteral(">\r\n                        \r\n                    </div>\r\n                </td>\r\n                <td>\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "561c69ba1d09589763334456c4115f70a3f89d386044", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "561c69ba1d09589763334456c4115f70a3f89d386224", async() => {
 #nullable restore
 #line 17 "E:\projeler\SupportForums\SupportForum\Views\Forum\Index.cshtml"
                                                                                      Write(forum.Name);

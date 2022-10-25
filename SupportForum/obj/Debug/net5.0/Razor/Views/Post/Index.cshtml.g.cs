@@ -49,34 +49,41 @@ using SupportForum.Models.Post;
 #nullable disable
 #nullable restore
 #line 7 "E:\projeler\SupportForums\SupportForum\Views\_ViewImports.cshtml"
-using SupportForum.Models.Home;
+using SupportForum.Models.Reply;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 8 "E:\projeler\SupportForums\SupportForum\Views\_ViewImports.cshtml"
-using SupportForum.Models.Search;
+using SupportForum.Models.Home;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 9 "E:\projeler\SupportForums\SupportForum\Views\_ViewImports.cshtml"
-using SupportForum.Models.ApplicationUser;
+using SupportForum.Models.Search;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 10 "E:\projeler\SupportForums\SupportForum\Views\_ViewImports.cshtml"
+using SupportForum.Models.ApplicationUser;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 11 "E:\projeler\SupportForums\SupportForum\Views\_ViewImports.cshtml"
 using Microsoft.AspNetCore.Identity;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5ad50663162c6d440572a02af3b8a931ef9c9078", @"/Views/Post/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"af618205ad8e6d6c1cf93377b2e286045285fd1c", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7f1a8f3916d4e4c4ab964d6bf11edb54351daa2c", @"/Views/_ViewImports.cshtml")]
     public class Views_Post_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<PostIndexViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Forum", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -112,7 +119,7 @@ using Microsoft.AspNetCore.Identity;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("<div>\r\n    <span>\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ad50663162c6d440572a02af3b8a931ef9c90786851", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ad50663162c6d440572a02af3b8a931ef9c90787031", async() => {
                 WriteLiteral("\r\n            Back to ");
 #nullable restore
 #line 5 "E:\projeler\SupportForums\SupportForum\Views\Post\Index.cshtml"
@@ -169,7 +176,7 @@ WriteAttributeValue("", 332, Model.AuthorImageUrl, 332, 21, false);
             WriteAttributeValue(" ", 404, "background-repeat:no-repeat", 405, 28, true);
             EndWriteAttribute();
             WriteLiteral("></div>\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ad50663162c6d440572a02af3b8a931ef9c907810433", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ad50663162c6d440572a02af3b8a931ef9c907810613", async() => {
                 WriteLiteral("\r\n            ");
 #nullable restore
 #line 14 "E:\projeler\SupportForums\SupportForum\Views\Post\Index.cshtml"
@@ -252,7 +259,7 @@ WriteAttributeValue("", 332, Model.AuthorImageUrl, 332, 21, false);
 #line hidden
 #nullable disable
             WriteLiteral("    <div class=\"row\">\r\n        <span>\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ad50663162c6d440572a02af3b8a931ef9c907814350", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ad50663162c6d440572a02af3b8a931ef9c907814530", async() => {
                 WriteLiteral("\r\n                Post Reply\r\n            ");
             }
             );
@@ -328,7 +335,7 @@ WriteAttributeValue(" ", 1339, reply.AuthorImageUrl, 1340, 21, false);
             WriteAttributeValue(" ", 1450, "no-repeat", 1451, 10, true);
             EndWriteAttribute();
             WriteLiteral("></div>\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ad50663162c6d440572a02af3b8a931ef9c907818724", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ad50663162c6d440572a02af3b8a931ef9c907818904", async() => {
                 WriteLiteral("\r\n                    ");
 #nullable restore
 #line 50 "E:\projeler\SupportForums\SupportForum\Views\Post\Index.cshtml"

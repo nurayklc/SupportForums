@@ -456,3 +456,6 @@ E:\projeler\SupportForums\SupportForum\obj\Debug\net5.0\SupportForum.dll
 E:\projeler\SupportForums\SupportForum\obj\Debug\net5.0\ref\SupportForum.dll
 E:\projeler\SupportForums\SupportForum\obj\Debug\net5.0\SupportForum.pdb
 E:\projeler\SupportForums\SupportForum\obj\Debug\net5.0\SupportForum.genruntimeconfig.cache
+E:\projeler\SupportForums\SupportForum\bin\Debug\net5.0\Microsoft.WindowsAzure.Storage.dll
+E:\projeler\SupportForums\SupportForum\obj\Debug\net5.0\Razor\Views\Forum\Create.cshtml.g.cs
+E:\projeler\SupportForums\SupportForum\obj\Debug\net5.0\Razor\Views\Reply\Create.cshtml.g.cs
