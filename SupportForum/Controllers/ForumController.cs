@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using Microsoft.WindowsAzure.Storage.Blob;
 using SupportForum.Data;
 using SupportForum.Data.Models;
 using SupportForum.Models.Forum;
@@ -14,10 +17,15 @@ namespace SupportForum.Controllers
     {
         private readonly IForum _forumService;
         private readonly IPost _postService;
-        public ForumController(IForum forumService, IPost postService)
+        private readonly IUpload _uploadService;
+        private readonly IConfiguration _configuration;
+
+        public ForumController(IForum forumService, IPost postService, IUpload uploadService, IConfiguration configuration)
         {
             _forumService = forumService;
             _postService = postService;
+            _uploadService = uploadService;
+            _configuration = configuration;
         }
         public IActionResult Index()
         {
@@ -65,6 +73,38 @@ namespace SupportForum.Controllers
         public IActionResult Search(int id, string searchQuery)
         {
             return RedirectToAction("Topic", new { id, searchQuery} );
+        }
+
+        public IActionResult Create()
+        {
+            var model = new AddForumViewModel();
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddForum(AddForumViewModel model)
+        {
+            var imageUri = "/images/users/users0.png";
+            if(model.ImageUpload != null)
+            {
+                var blockBlob = UploadForumImage(model.ImageUpload);
+                imageUri = blockBlob.Uri.AbsoluteUri;
+            }
+
+            var forum = new Forum
+            {
+                Title = model.Title,
+                Description = model.Description,
+                Created = DateTime.Now,
+                ImageUrl = model.ImageUrl
+            };
+            await _forumService.Create(forum);
+            return RedirectToAction("Index", "Forum");
+        }
+
+        private CloudBlockBlob UploadForumImage(IFormFile file)
+        {
+            throw new NotImplementedException();
         }
 
         private ForumListViewModel BuildForumList(Post post)
