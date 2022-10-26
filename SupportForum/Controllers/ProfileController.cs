@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SupportForum.Data;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace SupportForum.Controllers
 {
+    [Authorize]
     public class ProfileController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
@@ -48,6 +50,8 @@ namespace SupportForum.Controllers
             // update and create Profile photo with azure 
             return View();
         }
+
+        [Authorize(Roles = "Admin")]
         [Route("Users")]
         public IActionResult Index()
         {

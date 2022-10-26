@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SupportForum.Data;
 using SupportForum.Data.Models;
@@ -43,6 +44,8 @@ namespace SupportForum.Controllers
             };
             return View(model);
         }
+
+        [Authorize]
         public IActionResult Create(int id)
         {
             // Note: id is Form.Id
@@ -56,6 +59,9 @@ namespace SupportForum.Controllers
             };
             return View(model);
         }
+
+
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> AddPost(NewPostViewModel model)
         {

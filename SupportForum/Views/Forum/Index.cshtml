@@ -1,23 +1,51 @@
 ﻿@model ForumIndexViewModel
 
-<h1>Forums</h1>
-
-<table class="table table-hover" id="forumIndexTable">
-    <tbody>
-        @foreach (var forum in Model.ForumList)
-        {
-            <tr>
-
-                <td>
-                    <div class="forumLogo" style="background-image:url(@forum.ImageUrl); background-size:100%;">
-                        
-                    </div>
-                </td>
-                <td>
-                    <a asp-controller="Forum" asp-action="Topic" asp-route-id="@forum.Id">@forum.Name</a>
-                </td>
-                <td>@forum.Description</td>
-            </tr>
-        }
-    </tbody>
-</table>
+<div class="container">
+    <div class="row">
+        <h4>Browse Forums</h4>
+        <div>
+            <p>Welcome to <strong>Lambda Forums community</strong>. Posts are broadly categorized into seperate forums by programming language or area of interest</p>
+            <p>
+                Please read the Forum Guidelines before creating a new post.
+                @if (!Context.User.Identity.IsAuthenticated)
+            {
+                <span>You must be a <a asp-area="Identity" asp-page="/Account/Register">registered member</a> to create a new post </span>
+            }
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table table-hover">
+            <tbody>
+                @foreach(var forum in Model.ForumList)
+            {
+                <tr>
+                    <td>
+                        <div style="background-image:url(@forum.ImageUrl); background-size:100%; width:50px; height:50px; background-repeat:no-repeat;"></div>
+                        <div>
+                            <div>
+                                <a asp-controller="Forum" asp-action="Topic" asp-route-id="@forum.Id">@forum.Name</a>
+                            </div>
+                            <div class="bg-danger">
+                                @if (forum.HasRecentPost)
+                                {
+                                    <div>Hot</div>
+                                }
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        @forum.NumberOfPosts Posts 
+                    </td>
+                    <td>
+                        @forum.NumberOfUsers Users 
+                    </td>
+                    <td>
+                        @forum.Description 
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>

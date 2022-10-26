@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.WindowsAzure.Storage.Blob;
@@ -33,12 +34,16 @@ namespace SupportForum.Controllers
                 .Select(forum => new ForumListViewModel { 
                 Id = forum.Id,
                 Name = forum.Title,
-                Description = forum.Description
+                Description = forum.Description,
+                NumberOfPosts = forum.Posts?.Count() ?? 0,
+                NumberOfUsers = _forumService.GetActiveUsers(forum.Id).Count(),
+                ImageUrl = forum.ImageUrl,
+                HasRecentPost = _forumService.HasRecentPost(forum.Id)
             });
 
             var model = new ForumIndexViewModel
             {
-                ForumList = forums
+                ForumList = forums.OrderBy(f => f.Name)
             };
 
             return View(model);
@@ -75,6 +80,7 @@ namespace SupportForum.Controllers
             return RedirectToAction("Topic", new { id, searchQuery} );
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             var model = new AddForumViewModel();
@@ -82,6 +88,7 @@ namespace SupportForum.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> AddForum(AddForumViewModel model)
         {
             var imageUri = "/images/users/users0.png";
