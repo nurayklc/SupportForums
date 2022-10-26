@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupportForum", "SupportForu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupportForum.Data", "..\SupportForum.Data\SupportForum.Data.csproj", "{E490E967-8FA7-44DA-9049-D1370B8EDF67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupportForum.Service", "..\SupportForum.Service\SupportForum.Service.csproj", "{655E7855-461D-4C9B-9F09-9C53AEDB9D85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupportForum.Service", "..\SupportForum.Service\SupportForum.Service.csproj", "{655E7855-461D-4C9B-9F09-9C53AEDB9D85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

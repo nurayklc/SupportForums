@@ -48,5 +48,24 @@ namespace SupportForum.Controllers
             // update and create Profile photo with azure 
             return View();
         }
+        [Route("Users")]
+        public IActionResult Index()
+        {
+            var profiles = _userService.GetAll()
+                .OrderByDescending(user => user.Rating)
+                .Select(u => new ProfileViewModel
+                {
+                    Email = u.Email,
+                    UserName = u.UserName,
+                    ProfileImageUrl = u.ProfileImageUrl,
+                    UserRating = u.Rating.ToString(),
+                    MemberSince = u.MemberSince
+                });
+            var model = new ProfileListViewModel
+            {
+                Profiles = profiles
+            };
+            return View(model);
+        }
     }
 }

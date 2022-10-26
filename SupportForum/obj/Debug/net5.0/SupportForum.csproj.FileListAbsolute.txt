@@ -459,3 +459,4 @@ E:\projeler\SupportForums\SupportForum\obj\Debug\net5.0\SupportForum.genruntimec
 E:\projeler\SupportForums\SupportForum\bin\Debug\net5.0\Microsoft.WindowsAzure.Storage.dll
 E:\projeler\SupportForums\SupportForum\obj\Debug\net5.0\Razor\Views\Forum\Create.cshtml.g.cs
 E:\projeler\SupportForums\SupportForum\obj\Debug\net5.0\Razor\Views\Reply\Create.cshtml.g.cs
+E:\projeler\SupportForums\SupportForum\obj\Debug\net5.0\Razor\Views\Profile\Index.cshtml.g.cs
