@@ -1,1 +1,34 @@
-﻿
+﻿@model AddForumViewModel
+
+<div class="container">
+    <div class="row">
+        <div>
+            Create New Forum
+        </div>
+    </div>
+    <div class="row">
+        <div>
+            <form asp-action="AddForum" asp-controller="Forum" method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Title">Forum Title</label>
+                    <input class="form-control" type="text" asp-for="Title" name="Title" value="" placeholder="Choose forum title" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description">Forum Description</label>
+                    <input class="form-control" type="text" asp-for="Description" name="Description" value="" placeholder="Write a brief description" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div>
+                    <label>Upload Forum Image</label>
+                    <br />
+                    <label class="btn btn-light btn-file">
+                        Browse <input asp-for="ImageUpload" class="form-control" typeof="file" style="display:none"/>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary">Create Forum</button>
+            </form>
+        </div>
+    </div>
+</div>

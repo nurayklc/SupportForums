@@ -88,7 +88,7 @@ namespace SupportForum.Controllers
             if(model.ImageUpload != null)
             {
                 var blockBlob = UploadForumImage(model.ImageUpload);
-                imageUri = blockBlob.Uri.AbsoluteUri;
+                //imageUri = blockBlob.Uri.AbsoluteUri;
             }
 
             var forum = new Forum
@@ -102,9 +102,9 @@ namespace SupportForum.Controllers
             return RedirectToAction("Index", "Forum");
         }
 
-        private CloudBlockBlob UploadForumImage(IFormFile file)
+        private IActionResult UploadForumImage(IFormFile file)
         {
-            throw new NotImplementedException();
+            return RedirectToAction("Index", "Forum");
         }
 
         private ForumListViewModel BuildForumList(Post post)
