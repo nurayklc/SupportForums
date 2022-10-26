@@ -16,7 +16,6 @@ namespace SupportForum.Controllers
         private readonly IPost _postService;
         private readonly IForum _forumService;
         private readonly UserManager<ApplicationUser> _userManager;
-
         public PostController(IPost postService, IForum forumService, UserManager<ApplicationUser> userManager)
         {
             _forumService = forumService;
@@ -63,9 +62,8 @@ namespace SupportForum.Controllers
             var userId = _userManager.GetUserId(User);
             var user = _userManager.FindByIdAsync(userId).Result;
             var post = BuildPost(model, user);
-            _postService.Add(post).Wait(); 
+            await _postService.Add(post);
 
-            // TODO: Implement user rating management
             return RedirectToAction("Index", "Post", new { id = post.Id });
         }
 
