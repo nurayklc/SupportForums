@@ -62,7 +62,7 @@ namespace SupportForum.Service
                 searchQuery = searchQuery.ToLower();
             return string.IsNullOrEmpty(searchQuery) 
                 ? forum.Posts 
-                : forum.Posts.Where(post => post.Title.ToLower().Contains(searchQuery) || post.Content.Contains(searchQuery)).ToList();
+                : forum.Posts.Where(post => post.Title.ToLower().Contains(searchQuery) || post.Content.ToLower().Contains(searchQuery)).ToList();
         }
 
         public IEnumerable<Post> GetFilteredPosts(string searchQuery)

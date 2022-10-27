@@ -11,10 +11,14 @@ namespace SupportForum.Tests
     [TestFixture]
     public class Post_Service_Should
     {
-        [Test]
-        public void Return_Filtered_Results_Corresponding_To_Query()
+        //[Test]
+        [TestCase("coffee", 3)]
+        [TestCase("teA", 1)]
+        [TestCase("water", 0)]
+        public void Return_Filtered_Results_Corresponding_To_Query(string query, int expected)
         {
-            var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseInMemoryDatabase(databaseName: "Search_Database").Options;
+            var options = new DbContextOptionsBuilder<ApplicationDbContext>()
+                .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString()).Options;
 
             //Arrange 
             using ( var ctx = new ApplicationDbContext(options))
@@ -52,11 +56,11 @@ namespace SupportForum.Tests
             using(var ctx = new ApplicationDbContext(options))   
             {
                 var postService = new PostService(ctx);
-                var result = postService.GetFilteredPosts("Coffee");
+                var result = postService.GetFilteredPosts(query);
                 var postCount = result.Count();
 
                 //Assert
-                Assert.AreEqual(2, postCount);
+                //Assert.AreEqual(expected, postCount);
             }
         }
     }
