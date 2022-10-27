@@ -9,5 +9,6 @@ namespace SupportForum.Service
 {
     public class UploadService : IUpload
     {
+        // TODO: Use azure blob storage 
     }
 }

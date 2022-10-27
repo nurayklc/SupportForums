@@ -69,7 +69,7 @@ namespace SupportForum.Service
         {
             if (!string.IsNullOrEmpty(searchQuery))
                 searchQuery = searchQuery.ToLower();
-            return GetAll().Where(post => post.Title.ToLower().Contains(searchQuery) || post.Content.Contains(searchQuery)).ToList();
+            return GetAll().Where(post => post.Title.ToLower().Contains(searchQuery) || post.Content.ToLower().Contains(searchQuery)).ToList();
         }
 
         public IEnumerable<Post> GetLatestPosts(int n)
